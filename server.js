@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
@@ -6,7 +7,7 @@ const OpenAI = require('openai');
 
 const app = express();
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: process.env.AI_API_KEY // Reference the .env key here
 });
 
 app.set('view engine', 'ejs');
